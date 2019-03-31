@@ -1,0 +1,192 @@
+/* pages/bookTime/time.wxss */
+.btn{
+  width: 100%;
+  height: 150rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 110rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 0rpx;
+  z-index: 10;
+}
+
+.desc{
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  padding-top: 50rpx;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 680rpx;
+
+}
+
+.desc .title{
+  color: #1c2438;
+  font-size: 36rpx;
+}
+
+.desc .detail{
+  color: #495060;
+  font-size: 28rpx;
+  padding-top: 40rpx;
+}
+
+.addr{
+  background-color: #fff;
+  border-radius: 16rpx;
+  height: 110rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.addr view{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.addr  image{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.addr text{
+  width: 60%;
+  height: 100%;
+  font-size: 30rpx;
+  line-height: 100rpx;
+  text-align: left;
+}
+
+.content{
+  width: 100%;
+  min-height: 220rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.content .days{
+  width: 100%;
+  height: 180rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30rpx;
+}
+
+.content .days .item{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content .days .item .week{
+  width: 120rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  border: 1rpx solid #e9eaec;
+  background-color: #f8f8f9;
+  border-radius: 50%;
+  color: #00a8ec;
+
+}
+
+.content .days .item .week-checked{
+  background-color: #00a8ec;
+  color: #fff;
+}
+.content .days .item .day{
+  padding-top: 10rpx;
+  color: #00a8ec;
+}
+
+.content .time{
+  padding-top: 80rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+.content .time .item{
+  width: 25%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  
+
+}
+
+.content .time .item .item-time{
+  width: 120rpx;
+  height: 85rpx;
+  line-height: 85rpx;
+  text-align: center;
+  border-radius: 15rpx;
+  border: 1rpx solid #f8f8f9;
+  background-color: #fff;
+}
+
+.content .time .wait{
+  width: 75%;
+}
+
+.content .time .wait .item-wait{
+  width: 90%;
+}
+
+.content .time .item .overtime{
+  border: 1rpx solid #f8f8f9;
+  background-color: #f8f8f9;
+}
+
+.content .time .item .selected{
+  border: 1rpx solid #00a8ec;
+  color: #00a8ec;
+  position: relative;
+
+  }
+
+  .content .time .item .selected image{
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    right: 5rpx;
+    bottom: 5rpx;
+    z-index: 9;
+  }
+  .btn-bg{
+    margin-top: 40rpx;
+    background: #00a8ec;
+    color: #fff;
+    border-radius: 50rpx;
+    width: 80%;
+    font-size: 33rpx;
+  }
+
+
+
+

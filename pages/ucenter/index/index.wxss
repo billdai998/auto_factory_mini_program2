@@ -1,0 +1,365 @@
+/* pages/ucenter/index/index.wxss */
+
+.container {
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+.banner {
+  margin-top: 10rpx;
+  width: 100%;
+  height: 280rpx;
+  /* background-image: linear-gradient(to right, #00a8ec 0%, #f9d423 100%); */
+  background-color: #00a8ec;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  border-radius: 18rpx;
+  position: relative;
+}
+
+.banner .add {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-btn {
+  background-color: #3197f0;
+  color: #fff;
+}
+
+.banner .add image {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.banner .add text {
+  font-size: 28rpx;
+  color: #fff;
+  padding-top: 20rpx;
+}
+
+.user-info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.user-info .user-img {
+  width: 30%;
+  height: 100%;
+  line-height: 280rpx;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.user-info .user-img image {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  line-height: 280rpx;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.user-info .user-text {
+  padding-left: 30rpx;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.user-info .user-text text {
+  font-size: 33rpx;
+  color: #fff;
+}
+
+.user-info .user-score {
+  width: 30%;
+  height: 100%;
+  line-height: 280rpx;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 33rpx;
+  color: #fff;
+  padding-right: 30rpx;
+}
+
+.car-info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.car-info image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+}
+
+.car-info  text {
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.my-item {
+  width: 100%;
+  min-height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  margin-top: 30rpx;
+}
+
+.my-item .order {
+  /* background-color: #ff9200;
+   *//* background-image: linear-gradient(to right, #00a8ec 0%, #fee140 100%); */
+  background-color: #fff;
+  width: 100%;
+  height: 120rpx;
+  line-height: 80rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #e9eaec;
+  /* border-radius: 20rpx; *//* box-shadow: 10rpx 10rpx 5rpx #888; */
+  align-items: center;
+  /* margin-bottom: 20rpx; */
+}
+
+.order-item-1 {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-item-2 {
+  width: 70%;
+  height: 100%;
+  line-height: 120rpx;
+  text-align: left;
+  color: #495060;
+  font-size: 33rpx;
+}
+
+.order-item-3 {
+  width: 10%;
+  height: 100%;
+  line-height: 120rpx;
+  text-align: center;
+  color: #80848f;
+  font-size: 33rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.order-item-3 image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.order-item-1 image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.scroll-view {
+  margin-top: 15rpx;
+  height: 220rpx;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: auto;
+  overflow: hidden;
+}
+
+.scroll-view .car {
+  /* background-image: linear-gradient(to right, #00a8ec 0%, #fee140 100%); */
+  /* background-color: #00a8ec; */
+  width: 100%;
+  height: 200rpx;
+  display: inline-block;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+}
+
+.scroll-view .car .car-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.scroll-view .car .car-info .car-icon {
+  width: 30%;
+  height: 100%;
+  line-height: 220rpx;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+}
+
+.scroll-view .car .car-info .car-icon text {
+  position: absolute;
+  top: -80rpx;
+  left: 10rpx;
+  z-index: 11;
+  /* color: #ff0000; */
+  width: 36rpx;
+  height: 23rpx;
+  background-color: #f00;
+}
+
+.scroll-view .car .car-info .car-icon image {
+  line-height: 220rpx;
+  width: 130rpx;
+  height: 130rpx;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.scroll-view .car .car-info .car-txt {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.scroll-view .car .car-info .car-txt .txt {
+  font-size: 33rpx;
+  color: #fff;
+}
+
+.scroll-view .car .car-info .car-add {
+  width: 20%;
+  height: 100%;
+  line-height: 220rpx;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.scroll-view .car .car-info .car-add image {
+  line-height: 220rpx;
+  text-align: center;
+  vertical-align: middle;
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.item_list {
+  width: 80%;
+  height: 220rpx;
+  margin-right: 23rpx;
+  display: inline-block;
+  /* display: flex; */
+}
+
+.dialog-view {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  min-height: 220rpx;
+}
+
+.modal-view-bg {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-view {
+  background-color: #fff;
+  /* position: absolute;
+  top: 330rpx; */
+  width: 80%;
+  min-height: 460rpx;
+  border-radius: 50rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-view  .item {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog-input {
+  width: 80%;
+  height: 80rpx;
+  border: 1rpx solid #00a8ec;
+  border-radius: 18rpx;
+  margin-top: 20rpx;
+}
+
+.dialog-input-code {
+  width: 45%;
+}
+
+.code-btn {
+  width: 35%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 18rpx;
+  padding-left: 0rpx;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+}
+
+.btn-unable {
+  background-color: #f2f2f2f2;
+  border: 1rpx solid #f2f2f2f2;
+}
+
+.btn-able {
+  background-color: #ff0;
+  border: 1rpx solid #f2f2f2f2;
+}
+
+.btn {
+  width: 80%;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 38rpx;
+  background: #00a8ec;
+  margin-top: 50rpx;
+  margin-bottom: 60rpx;
+  border-radius: 30rpx;
+}
+
+.cell-group {
+  width: 100% !important;
+}

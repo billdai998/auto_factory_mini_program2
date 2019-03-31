@@ -1,0 +1,136 @@
+@import '../goods/goods.wxss';
+
+.price {
+  width: 100%;
+  height: 150rpx;
+  background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+}
+
+.price .nums {
+  width: 25%;
+  height: 100%;
+  line-height: 150rpx;
+  font-size: 38rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.price .ppp{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price  .ppp .p {
+  /* height: 50rpx; */
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 43rpx;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+}
+.price  .ppp .org-price{
+  text-decoration: line-through;
+  font-size: 33rpx;
+}
+
+.price .time {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.price .time .t {
+  padding-top: 40rpx;
+  font-size: 33rpx;
+  color: #fff;
+}
+
+.price .time .down {
+  padding-bottom: 40rpx;
+  font-size: 33rpx;
+  color: #fff;
+  padding-right: 20rpx;
+  padding-top: 20rpx;
+}
+
+.price .time .down text{
+  color: #fff;
+  font-size: 33rpx;
+}
+
+.big {
+  color: #fff;
+  font-size: 38rpx;
+  font-weight: bold;
+  padding-bottom: 30rpx;
+}
+
+.initiator{
+padding-left: 20rpx;
+/* padding-right: 20rpx; */
+margin-top: 10rpx;
+margin-bottom: 10rpx;
+display: flex;
+flex-direction: row;
+background: #fff;
+width: 100%;
+height: 68rpx;
+
+}
+.initiator .img{
+  width: 30%;
+  height: 100%;
+  line-height: 68rpx;
+  font-size: 33rxp;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  
+}
+
+.initiator .img image{
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.initiator .desc{
+  width: 40%;
+  height: 100%;
+  line-height: 68rpx;
+  font-size: 33rxp;
+  text-align: right;
+  padding-right: 20rpx;
+}
+.initiator .desc text{
+  color: #ff0000;
+}
+
+.initiator .btn{
+  width: 20%;
+  height: 100%;
+  line-height: 68rpx;
+  font-size: 33rxp;
+  text-align: center;
+  background-color: #ff0000;
+  color: #fff;
+  border-radius: 15rpx;
+  /* padding-left: 20rpx; */
+}

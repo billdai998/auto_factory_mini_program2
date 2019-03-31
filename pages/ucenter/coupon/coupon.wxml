@@ -1,0 +1,53 @@
+<!--pages/ucenter/coupon/coupon.wxml-->
+
+<view class='container'>
+  <i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+  <view class='order'>
+    <i-tabs current="{{ current }}" color="#00a8ec" bindchange="handleChange">
+      <i-tab key="tab1" title="未使用"></i-tab>
+      <i-tab key="tab2" title="已使用"></i-tab>
+      <i-tab key="tab3" title="已过期"></i-tab>
+    </i-tabs>
+  </view>
+
+  <view class='list-block'>
+
+    <view class="coupon {{item.status!=0?'coupon-diabled':''}}" wx:for="{{list}}" wx:if="{{item.status==status}}">
+
+      <view class="coupon-left">
+        <view class="coupon-inner">
+
+          <view class="coupon-condition">
+            <text class='text-color'>{{item.name}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="coupon-right">
+        <view class="coupon-inner">
+          <view class="coupon-time">
+            <view class='text-color'>截止日期</view>
+            <view class='text-color'>{{item.end_time}}</view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+
+
+
+
+
+
+    <view class='nodata' wx:if="{{!hasMoreData}}">
+      <i-load-more tip="暂无数据" loading="{{ false }}" />
+    </view>
+
+
+  </view>
+
+
+
+  <i-spin size="large" fix wx:if="{{ spinShow }}">
+  </i-spin>
+</view>

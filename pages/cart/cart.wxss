@@ -1,0 +1,363 @@
+/* pages/cart/car.wxss */
+
+.no-cart {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.no-cart .c {
+  width: 100%;
+  height: auto;
+  margin-top: 200rpx;
+}
+
+.no-cart .c image {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  width: 258rpx;
+  height: 258rpx;
+}
+
+.no-cart .c text {
+  margin: 0 auto;
+  display: block;
+  width: 258rpx;
+  height: 29rpx;
+  line-height: 29rpx;
+  text-align: center;
+  font-size: 29rpx;
+  color: #999;
+}
+
+.list {
+  width: 100%;
+  min-height: 330rpx;
+}
+
+.list .item {
+  width: 100%;
+  height: 220rpx;
+  background: #fff;
+  margin-bottom: 18rpx;
+  display: flex;
+  flex-direction: row;
+
+  
+}
+
+.list .item-del {
+  background-color: rgba(0, 0, 0, 0.81);
+  opacity: 0.8;
+  width: 100%;
+  height: 220rpx;
+  z-index: 10;
+  position: absolute;
+  bottom: 0rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.list .item-del .del-btn{
+  width: 150rpx;
+  height: 150rpx;
+  line-height: 150rpx;
+  text-align: center;
+  border-radius: 50%;
+  background: #ff0000;
+  color: #fff;
+  font-size: 33rpx;
+  margin-right: 60rpx;
+}
+
+.row-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.list .item .check {
+  width: 10%;
+  height: 100%;
+}
+
+.list .item .check image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.list .item .img {
+  width: 25%;
+  height: 100%;
+}
+
+.list .item .img image {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.list .item .txt {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: left;
+  padding: 20rpx;
+}
+
+.list .item .txt .name {
+  font-size: 33rpx;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list .item .txt .desc {
+  font-size: 25rpx;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list .item .txt  .price {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.list .item .txt  .price .p {
+  font-size: 33rpx;
+  color: #f00;
+}
+
+.list .item .txt  .price .nums {
+}
+
+/* pages/booking/booking.wxss */
+@import '../ucenter/index/index.wxss';
+
+.type {
+  background-color: #fff;
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  border-radius: 40rpx;
+  width: 100%;
+  height: 210rpx;
+}
+
+.type .item {
+  width: 25%;
+  height: 190rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.type .line {
+  border-bottom: 5rpx solid #00a8ec;
+  width: 30%;
+  /* padding-top: 10rpx; */
+}
+
+.type .item image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.type .item text {
+  color: #80848f;
+  font-size: 32;
+  /* padding-top: 15rpx; */
+}
+
+.content {
+  background: #fff;
+  width: 100%;
+  min-height: 150rpx;
+  margin-top: 30rpx;
+  border-radius: 30rpx;
+}
+
+.content .item {
+  width: 100%;
+  min-height: 150rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content .item .item-main {
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1rpx solid #e9eaec;
+}
+
+.item-small {
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-small-check {
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.item-small-check .check-price {
+  color: #f00;
+  font-size: 32rpx;
+}
+
+.item-small-check .check_box {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.item-small image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.item-middel {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+
+.item-middel .title {
+  color: #1c2438;
+  font-size: 33rpx;
+}
+
+.item-middel .desc {
+  color: #495060;
+  font-size: 22rpx;
+}
+
+.item-sub {
+  margin-top: 15rpx;
+  width: 90%;
+  min-height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 0.5rpx solid #00a8ec;
+  border-radius: 30rpx;
+}
+
+.item-sub .sub-small {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-sub .sub-small .icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.item-sub .sub-small .check_box {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.item-sub .sub-middle {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-sub .sub-middle .title {
+  color: #1c2438;
+  font-size: 35rpx;
+}
+
+.item-sub .sub-middle .price {
+  color: #ed3f14;
+  font-size: 36rpx;
+}
+
+.floot {
+  background: #fff;
+  z-index: 99;
+  position: fixed;
+  bottom: 0rpx;
+  height: 110rpx;
+  width: 100%;
+  border-top: 1rpx solid #dddee1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.floot .price {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.floot .price .txt {
+  color: #1c2438;
+  font-size: 38rpx;
+}
+
+.floot .price .money {
+  color: #ed3f14;
+  font-size: 38rpx;
+}
+
+.floot .btn {
+  width: 30%;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100rpx;
+  background-color: #00a8ec;
+  color: #fff;
+  font-size: 38rpx;
+  border-radius: 0rpx;
+}

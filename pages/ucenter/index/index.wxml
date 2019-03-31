@@ -1,0 +1,116 @@
+<!--pages/ucenter/index/index.wxml-->
+<view class='container'>
+
+  <view class='banner bg-banner'>
+    <view class='add' wx:if="{{!hasUser}}">
+      <button class='add-btn' open-type="getUserInfo" bindgetuserinfo='bindGetUserInfo'>微信登陆</button>
+    </view>
+
+    <view wx:else class='user-info'>
+      <view class='user-img'>
+        <image mode="scaleToFill" src='{{userInfo.avatarUrl}}'></image>
+      </view>
+      <view class='user-text'>
+        <text>{{userInfo.nickName}}</text>
+        <text>{{mobile}}</text>
+      </view>
+      <navigator class='user-score' url='/pages/ucenter/score/score?score={{score}}'>积分：{{score}}</navigator>
+
+    </view>
+
+  </view>
+
+  <scroll-view class='scroll-view' scroll-x style="width: auto;overflow:hidden;">
+    <block wx:if="{{carList.length>0}}">
+      <view class='car bg-banner' wx:for="{{carList}}" wx:key="this" style='{{carList.length>1?"width:90%":"width:100%"}};'>
+
+        <view class='car-info'>
+          <view class='car-icon'>
+            <text wx:if="{{car.no==item.no}}">默认</text>
+            <image src='{{item.pic}}'></image>
+          </view>
+          <navigator class='car-txt' data-car='{{item}}' bindtap='selectCar' url="/pages/ucenter/check/check">
+            <view class='txt'>{{item.serial}}</view>
+            <view class='txt'>{{item.no}}</view>
+          </navigator>
+          <navigator class='car-add' url="/pages/carList/carList">
+            <image src='{{add_img}}'></image>
+          </navigator>
+        </view>
+
+      </view>
+    </block>
+    <block wx:else>
+      <view class='car' style='width:100%;' bindtap="addCars">
+
+        <view class='car-info'>
+          <view class='car-icon'>
+            <image src='{{item.pic}}'></image>
+          </view>
+          <view class='car-txt'>
+            <view class='txt'>完善我的车辆信息</view>
+            <!-- <view class='txt'>{{item.no}}</view> -->
+          </view>
+          <view class='car-add'>
+            <image src='{{add_img}}'></image>
+          </view>
+        </view>
+
+      </view>
+    </block>
+  </scroll-view>
+
+
+
+
+
+
+  <view class='my-item'>
+  
+    <navigator class='order' wx:for="{{my_item}}" wx:key="this" url="{{item.url}}">
+      <view class='order-item-1'>
+        <image src='{{item.img}}'></image>
+      </view>
+      <view class='order-item-2'>
+        {{item.name}}
+      </view>
+      <view class='order-item-3'>
+        <!-- <text>{{item.desc}}</text> -->
+        <image src='/static/images/arrow_right.png'></image>
+      </view>
+
+    </navigator>
+  </view>
+
+  <!-- <i-modal title="请输入基本信息" visible="{{ visible }}" bind:ok="handleSubmit" bind:cancel="handleClose">
+    <view class='dialog-view'>
+    <view>
+      <input class='dialog-input' placeholder="请输入姓名" auto-focus bindblur="getName" /></view><view>
+      <input class='dialog-input' type="number" placeholder="请输入电话号码" bindblur="getPhone" /></view><view>
+
+      <input class='dialog-input' type="number" placeholder="请输入验证码" bindblur="getVercode" /></view>
+    </view>
+  </i-modal> -->
+
+  <view class='modal-view-bg' wx:if="{{ visible }}">
+    <view class='modal-view'>
+      <view class='item'>请输入基本信息</view>
+      <!-- <view class='item'>
+        <input class='dialog-input' placeholder="请输入姓名" auto-focus bindblur="getName" />
+      </view> -->
+      <view class='item'>
+        <input class='dialog-input' type="number" placeholder="请输入电话号码" bindblur="getPhone" />
+      </view>
+      <view class='item'>
+
+        <input class='dialog-input dialog-input-code' type="number" placeholder="请输入验证码" bindblur="getVercode" />
+        <view class='code-btn {{canSendFlag==true?"btn-able":"btn-unable"}}  ' bindtap='getSmsCode'>{{verName}}</view>
+      </view>
+      <view class='btn' bindtap='handleSubmit'>提交</view>
+    </view>
+  </view>
+
+
+  <i-message id="message" />
+
+</view>

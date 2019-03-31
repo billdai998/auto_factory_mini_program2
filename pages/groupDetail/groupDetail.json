@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "i-divider": "/module/iview/dist/divider/index",
+    "i-input-number": "/module/iview/dist/input-number/index",
+    "i-badge": "/module/iview/dist/badge/index",
+    "i-toast": "/module/iview/dist/toast/index",
+    "i-count-down": "/module/iview/dist/count-down/index",
+    "i-message": "/module/iview/dist/message/index",
+    "i-icon": "/module/iview/dist/icon/index",
+    "i-spin": "/module/iview/dist/spin/index",
+    "wxparser": "plugin://wxparserPlugin/wxparser"
+  }
+}

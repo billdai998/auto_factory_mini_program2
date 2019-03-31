@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-button": "/module/iview/dist/button/index",
+    "i-swipeout": "/module/iview/dist/swipeout/index",
+    "i-message": "/module/iview/dist/message/index",
+    "i-modal": "/module/iview/dist/modal/index"
+  }
+}

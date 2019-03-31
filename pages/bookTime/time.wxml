@@ -1,0 +1,49 @@
+<!--pages/bookTime/time.wxml-->
+<view class='container'>
+  <view class='content'>
+    <view class='days'>
+      <view class='item' wx:for="{{days}}" wx:key="{{item.date}}" data-idx='{{index}}' bindtap='selectDay'>
+        <view class='week {{checkIdx==index?"week-checked":""}}'>{{item.week}}</view>
+        <view class='day'>{{item.date}}</view>
+      </view>
+    </view>  
+
+    <view class='time'>
+      <view class='item {{index==time_len?"wait":""}}' wx:for="{{times}}" wx:key="{{item}}" data-idx='{{index}}' bindtap='selectTime'>
+        <view class='item-time {{item.check == true?"selected":""}}  {{index==time_len?"item-wait":""}} {{item.hasOver ==true?"overtime":""}}'>{{item.time}}
+          <image wx:if="{{item.check}}" src='{{selected_icon}}'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='addr'>
+    <view>
+      <image src='{{addr_icon}}'></image>
+    </view>
+
+    <text bindtap='setNav'>重庆市九龙坡区创业大道123号1层</text>
+    <view bindtap='callPhone'>
+      <image src='{{phone_icon}}'></image>
+    </view>
+
+
+  </view>
+
+  <view class='desc'>
+    <text class='title'>预约说明</text>
+    <text class='detail'>预约成功后请提前10分钟到店，若迟到10分钟以上需要重新排队或预约。</text>
+    <text class='detail'>当预定时间内有其他车辆占用工位，您将是其后的第一顺位客户，技师会优先为您服务。</text>
+  </view>
+
+  <view class='btn'>
+    <!-- <i-button bind:click="btnMakeSure" type="warning" shape="circle" i-class='btn-bg'	  >确认到店时间</i-button> -->
+    <button class='btn-bg' bindtap='btnMakeSure'>确认到店时间</button>
+
+  </view>
+
+  <i-toast id="toast" />
+  <i-message id="message" />
+
+
+</view>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-checkbox-group": "/module/iview/dist/checkbox-group/index",
+    "i-checkbox": "/module/iview/dist/checkbox/index",
+    "i-button": "/module/iview/dist/button/index"
+
+  }
+}

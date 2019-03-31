@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-collapse": "/module/iview/dist/collapse/index",
+    "i-collapse-item": "/module/iview/dist/collapse-item/index",
+    "i-icon": "/module/iview/dist/icon/index",
+    "i-radio": "/module/iview/dist/radio/index",
+    "i-message": "/module/iview/dist/message/index",
+    "i-spin": "/module/iview/dist/spin/index",
+    "i-toast": "/module/iview/dist/toast/index"
+  }
+}

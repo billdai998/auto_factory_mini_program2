@@ -1,0 +1,49 @@
+<view class="add-address">
+  <view class="add-form">
+    <view class="form-item">
+      <input class="input" bindinput="bindinputName" placeholder="姓名" value="{{address.name}}" auto-focus/>
+    </view>
+    <view class="form-item">
+      <input class="input" bindinput="bindinputMobile" value="{{address.mobile}}" placeholder="手机号码" />
+    </view>
+    <view class="form-item">
+      <input class="input" value="{{selectRegion}}" disabled="true" bindtap="chooseRegion" placeholder="省份、城市、区县" />
+    </view>
+    <view class="form-item">
+      <input class="input" bindinput="bindinputAddress" value="{{address.detail}}" placeholder="详细地址, 如街道、楼盘号等" />
+    </view>
+    <view class="form-default">
+      <text bindtap="bindIsDefault" class="default-input {{address.isdefault == 1 ? 'selected' : ''}}">设为默认地址</text>
+    </view>
+  </view>
+
+  <view class="btns">
+    <button class="cannel" bindtap="cancelAddress">{{cancelName}}</button>
+    <button class="save" bindtap="saveAddress" loading='{{isLoading}}'>保存</button>
+  </view>
+
+  <view class="region-select" wx:if="{{openSelectRegion}}">
+    <view class="hd">
+      <view class="region-selected">
+        <view class='city'>{{address.province_txt}}/</view>
+        <view class='city'>{{address.city_txt}}/</view>
+        <view class='city'>{{address.county_txt}}</view>
+      </view>
+      <view class="done selectRegionDone" bindtap="doneSelectRegion">确定</view>
+    </view>
+    <view class="bd">
+      <scroll-view class="region-list" scroll-y style="height: 492rpx;">
+        <view class="item" bindtap="selectProvince" wx:for="{{provinceList}}" wx:key="{{item.id}}" data-item="{{item}}">{{item.name}}</view>
+      </scroll-view>
+      <scroll-view class="region-list" scroll-y style="height: 492rpx;">
+        <view class="item" bindtap="selectCity" wx:for="{{cityList}}" wx:key="{{item.id}}" data-item="{{item}}">{{item.name}}</view>
+      </scroll-view>
+      <scroll-view class="region-list" scroll-y style="height: 492rpx;">
+        <view class="item" bindtap="selectCounty" wx:for="{{countyList}}" wx:key="{{item.id}}" data-item="{{item}}">{{item.name}}</view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+<view class="bg-mask" bindtap="cancelSelectRegion" wx:if="{{openSelectRegion}}"></view>
+<i-toast id="toast" />
+<i-message id="message" />

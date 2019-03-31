@@ -1,0 +1,5 @@
+/* pages/ucenter/subscribe/subscribe.wxss */
+.order{
+  background: #fff;
+  
+}

@@ -1,0 +1,31 @@
+<!--pages/topic/topic.wxml-->
+<view class="container">
+
+<view class='top-loading' wx:if="{{isLoading}}">
+  <i-grid-item i-class="top-loading-item">
+        <i-spin size="large"></i-spin>
+    </i-grid-item>
+</view>
+
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+  <navigator class='list' wx:for="{{list}}" wx:key="this" url='../topicDetail/detail?id={{item.id}}'>
+    <view class='list-img'>
+      <view class='view-img'>
+        <image class='img' src='{{item.img}}'></image>
+      </view>
+      <view class='text'>{{item.title}}</view>
+    </view>
+
+    <view class='list-botton'>
+      <text class='time'>{{item.time}}</text>
+    </view>
+
+  </navigator>
+
+  <view wx-if="{{!hasMoreData}}"  >
+    <i-load-more tip="暂无数据" loading="{{ false }}" />
+  </view>
+
+
+
+</view>

@@ -1,0 +1,43 @@
+<!--pages/ucenter/comment/comment.wxml-->
+<view class='container'>
+  <i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+  <view class='content'>
+    <view class='mall'>
+      <view class='img'>
+        <image src='{{mall.images[0].url}}'></image>
+      </view>
+      <view class='detail'>
+        <view class='name'>{{mall.name}}</view>
+        <view class='memo'>{{mall.memo}}</view>
+      </view>
+    </view>
+
+    <view class='comment'>
+      <view class='box'>
+        <view class='txt'>商品得分</view>
+        <view wx:for="{{5}}" wx:key="this" data-item='{{item}}' bindtap='getScore'>
+          <i-icon type="collection" color='#bbbec4' size="26" wx:if="{{item>startMall}}" />
+          <i-icon type="collection_fill" color='#ff9900' size="26" wx:if="{{item<=startMall}}" />
+
+        </view>
+      </view>
+      <view class='box'>
+        <view class='txt'>服务得分</view>
+        <view wx:for="{{5}}" wx:key="this" data-item='{{item}}' bindtap='getScoreService'>
+          <i-icon type="collection" color='#bbbec4' size="26" wx:if="{{item>startService}}" />
+          <i-icon type="collection_fill" color='#ff9900' size="26" wx:if="{{item<=startService}}" />
+
+        </view>
+      </view>
+      <view class='box'>
+       <textarea bindinput='getComment'  auto-height placeholder="请输入评语..." />
+      </view>
+    </view>
+
+    <view class='btn' bindtap='submitComment'>提交</view>
+  </view>
+
+</view>
+
+  <i-message id="message" />

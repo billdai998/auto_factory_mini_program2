@@ -1,0 +1,11 @@
+/* pages/ucenter/orderDetail/orderDetail.wxss */
+@import '/pages/bookDetail/bookDetail.wxss';
+
+.service-name{
+  display:-webkit-box;
+word-break:break-all;
+-webkit-box-orient:vertical;
+-webkit-line-clamp:1;
+overflow:hidden;
+text-overflow:ellipsis;
+}

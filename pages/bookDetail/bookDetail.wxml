@@ -1,0 +1,49 @@
+<!--pages/bookDetail/bookDetail.wxml-->
+<view class='container'>
+
+  <view class='block info'>
+    <!-- <view class='link'>
+      <view class='link-item'>
+        <input value="{{linkName}}" auto-focus bindblur='getUserName' />
+
+        <input value="{{linkMobile}}" bindblur='getUserMobile' />
+
+      </view>
+
+
+
+    </view> -->
+    <view class='car'>联系电话：{{linkMobile}}</view>
+    <view class='car'>到店车辆：{{car.no}}</view>
+    <view class='car'>{{car.name}} {{car.serial}}</view>
+  </view>
+
+  <view class='block'>
+    <view class='store'>服务门店</view>
+    <view class='car'>重庆市九龙坡区创业大道123号1层</view>
+    <view class='link'>
+      <view class='item left time'>到店时间</view>
+      <view class='item right'>{{booking.bookingDate}} {{booking.bookingWeek}} {{booking.bookingTime}}</view>
+    </view>
+  </view>
+
+  <view class='block service'>
+    <view class='store'>服务项目</view>
+    <view class='link' wx:for='{{carts}}' wx:key="{{item.id}}">
+      <view class='item left time'>{{item.name}}</view>
+      <view class='item right'>¥{{item.price}} * {{item.nums}}</view>
+    </view>
+    <view class='car'>共{{nums}}项服务 小计¥{{amount}}</view>
+  </view>
+
+  <!-- <view class='block amount'></view> -->
+
+  <view class='btn'>
+    <view class='text'>
+      <text class='count'>合计：</text>
+      <text class='amount'>¥{{amount}}</text>
+    </view>
+    <button class='pay' bindtap='getOrder' disabled='{{btnLoading}}' loading="{{btnLoading}}">{{btnText}}</button>
+  </view>
+  <i-message id="message" />
+</view>

@@ -1,0 +1,21 @@
+<!--pages/goodList/goodList.wxml-->
+<view class="container">
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+  <view>
+    <view class='goods-list'>
+      <navigator  class='item' wx:for="{{list}}" wx:key="*this" url='../goods/goods?id={{item.id}}'>
+        <view class='img'>
+          <image src='{{item.images[0].url}}'></image>
+        </view>
+        <view class='name'>{{item.name}}</view>
+        <view class='price'>{{item.price}}</view>
+      </navigator>
+    </view>
+    <view class='nodata' wx:if="{{!hasMoreData}}">
+      <i-load-more tip="暂无数据" loading="{{ false }}" />
+    </view>
+  </view>
+
+
+</view>

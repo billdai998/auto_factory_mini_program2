@@ -1,0 +1,15 @@
+<!--pages/ucenter/subscribe/subscribe.wxml-->
+<view class='container'>
+
+  <view class='order'>
+    <i-tabs current="{{ current }}" color="#FF4500" bindchange="handleChange">
+      <i-tab key="tab1" title="全部"></i-tab>
+      <i-tab key="tab2" title="待处理"></i-tab>
+      <i-tab key="tab3" title="已完成"></i-tab>
+      <i-tab key="tab4" title="已取消"></i-tab>
+    </i-tabs>
+
+   
+  </view>
+
+</view>

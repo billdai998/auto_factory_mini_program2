@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "i-spin": "/module/iview/dist/spin/index",
+    "i-load-more": "/module/iview/dist/load-more/index"
+  },
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 5,
+  "backgroundTextStyle": "dark",
+  "backgroundColor": "#fff"
+}

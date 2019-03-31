@@ -1,0 +1,19 @@
+<!--pages/ucenter/score/score.wxml-->
+<view class='container'>
+  <view class='score'>
+    <i-divider content="总积分{{score}} 积分详细信息"></i-divider>
+
+    <view class='score-item' wx:for="{{list}}" wx:key="this">
+      <view class="item-cell">
+        <text class="cell-id">{{index+1}}</text>
+        <text class='cell-base'>{{item.type_text}}</text>
+        <text class='cell-base'>{{item.score}}</text>
+        <text class="cell-date">{{item.date}}</text>
+      </view>
+    </view>
+  </view>
+
+
+
+
+</view>

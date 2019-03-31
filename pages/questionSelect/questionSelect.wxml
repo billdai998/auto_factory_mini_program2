@@ -1,0 +1,27 @@
+<!--pages/questionSelect/questionSelect.wxml-->
+<view class="container">
+  <view class='content'>
+
+    <view class='user'>
+      <view class='img'>
+        <image src='{{userInfo.avatar_url}}'></image>
+      </view>
+      <view class='banner'>
+        <view class='item'>{{userInfo.name}}</view>
+      </view>
+    </view>
+
+    <view class='question' wx:if="{{times==0}}">
+      <view class="title ">{{title}}</view>
+      <view class="qs-item {{item.checked?'right':''}} animated zoomIn slow" wx:for="{{items}}" wx:key="{{item.id}}" data-idx='{{index}}' data-id='{{item.id}}' bindtap='selectItem'>{{item.name}}</view>
+
+    </view>
+    <view class='question' wx:else>
+    <view class="title ">您已参加过此活动，感谢关注！</view>
+    <view class='qs-item checked' bindtap='goBack'>返回</view>
+    </view>
+
+
+  </view>
+
+</view>

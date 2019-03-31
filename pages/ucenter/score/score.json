@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-cell-group": "/module/iview/dist/cell-group/index",
+    "i-cell": "/module/iview/dist/cell/index",
+    "i-divider": "/module/iview/dist/divider/index"
+  }
+}

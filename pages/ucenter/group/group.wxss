@@ -1,0 +1,21 @@
+/* pages/ucenter/group/group.wxss */
+@import '../order/order.wxss';
+.list-block{
+  margin-top: 25rpx;
+}
+
+.share-btn{
+  font-size: 32rpx;
+  width: 260rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background-color: #00a8ec;
+  border-radius: 8rpx;
+  color: #fff;
+  margin-top: 20rpx;
+}
+
+.count-down{
+  height: 130rpx;
+}

@@ -1,0 +1,145 @@
+<!--index.wxml-->
+<view class="container">
+
+  <i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+
+  <view class='head-ad'>
+    <swiper autoplay="true" interval="3000" duration="1000" circular="true">
+      <block wx:for="{{bannerList}}" wx:key="{{item.id}}">
+        <swiper-item wx:if="{{item.images.length>0}}">
+          <view class='banner-img' data-item="{{item}}" bindtap="getBannerItem">
+            <image src="{{item.images[0].url}}" mode="scaleToFill" lazy-load="true" class="slide-image" />
+            <view class='banner-title'>{{item.name}}</view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+
+  </view>
+
+
+  <view class='type'>
+    <navigator wx:for="{{itemData}}" wx:key="{{item.id}}" class='item' data-type="{{item.val}}" url="/pages/booking/booking?type={{item.val}}">
+      <image src='{{item.icon}}'></image>
+      <text>{{item.key}}</text>
+      <view class='line' wx:if="{{item.val ==type }}"></view>
+    </navigator>
+  </view>
+
+  <view class='view-content'>
+    <view class='divider'>
+      <i-divider content="当季精选" color="#1c2438"></i-divider>
+    </view>
+
+    <view class='service'>
+
+      <view class='hot'>
+        <navigator class='left' url="../goods/goods?id={{adData.id}}">
+
+          <view class='left-img-txt'>
+            <text class='title'>{{adData.name}}</text>
+            <text class='desc'>{{adData.memo}}</text>
+          </view>
+          <view class='hot-img'>
+            <image src='{{adData.images[0].url}}'></image>
+          </view>
+
+        </navigator>
+
+        <navigator class='right' wx:if="{{isGroup==1}}" url='/pages/groupList/groupList'>
+          <view class='img-txt'>
+            <text class='title'>团购</text>
+          </view>
+          <image src='{{group_img}}'></image>
+        </navigator>
+
+        <navigator class='right' wx:else url='/pages/questionSelect/questionSelect'>
+          <view class='img-txt'>
+            <text class='title'>有奖问答</text>
+          </view>
+          <image class='img-answer' src='{{answer_img}}'></image>
+        </navigator>
+
+      </view>
+      <navigator class='top' url="../goods/goods?id={{mallData.id}}">
+
+        <view class='img-txt'>
+          <text class='title'>{{mallData.name}}</text>
+          <text class='desc'>{{mallData.memo}}</text>
+        </view>
+        <view class='img'>
+          <image src='{{mallData.images[0].url}}'></image>
+        </view>
+      </navigator>
+
+    </view>
+
+
+  </view>
+
+  <view class='view-shop'>
+    <view class='divider'>
+      <i-divider content="到店专享" color="#1c2438"></i-divider>
+    </view>
+    <view class='shop-info' wx:for="{{orgs}}" wx:key="item.id" bindtap='getNav' data-item="{{item}}">
+      <view class='shop-item'>
+        <image src='{{item.img}}' class='shop-img'></image>
+      </view>
+      <view class='shop-item'>
+
+        <text style='color:#1c2438;font-size:20px;'>{{item.name}}</text>
+        <text style='color:#495060'>{{item.address}}</text>
+        <view>
+          <text style='color:#1c2438;'>{{item.start_time}}-{{item.end_time}}</text>
+          <image class='nav' src='/static/images/nav.png'></image>
+
+        </view>
+
+
+      </view>
+
+    </view>
+  </view>
+
+  <view class='view-parter'>
+    <view class='divider'>
+      <i-divider content="合作伙伴" color="#1c2438"></i-divider>
+    </view>
+    <view class='parter-list'>
+      <view class='parter-item' wx:for="{{partner}}" wx:key="item.id">
+        <view class='parter-img'>
+          <image src='{{item.logo}}' lazy-load="true"></image>
+        </view>
+        <view class='parter-name'>{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>
+<i-message id="message" />
+
+<!-- <view class='user-bg' hidden='{{hasUserInfo}}'>
+  <view class='view-user'>
+    <view class='text'>请授权【汽车工厂】使用您的基本信息！</view>
+    <view class='btn'><button class='auth-btn' open-type="getUserInfo" bindgetuserinfo='bindGetUserInfo'>授权</button></view>
+  </view>
+</view>
+
+ <view class='user-bg' wx:if="{{ showInputUser }}">
+    <view class='modal-view'>
+      <view class='item'>请输入基本信息</view>
+      <view class='item'>
+        <input class='dialog-input' placeholder="请输入姓名" auto-focus bindblur="getName" />
+      </view>
+      <view class='item'>
+        <input class='dialog-input' type="number" placeholder="请输入电话号码" bindblur="getPhone" />
+      </view>
+      <view class='item'>
+
+        <input class='dialog-input dialog-input-code' type="number" placeholder="请输入验证码" bindblur="getVercode" />
+        <view class='code-btn {{canSendFlag==true?"btn-able":"btn-unable"}}  ' bindtap='getSmsCode'>{{verName}}</view>
+      </view>
+      <view class='btn' bindtap='handleSubmit'>提交</view>
+    </view>
+  </view> -->

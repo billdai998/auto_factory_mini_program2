@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "i-toast": "/module/iview/dist/toast/index",
+    "i-message": "/module/iview/dist/message/index",
+    "i-swipeout": "/module/iview/dist/swipeout/index",
+    "i-load-more": "/module/iview/dist/load-more/index",
+    "i-input-number": "/module/iview/dist/input-number/index"
+  }
+}

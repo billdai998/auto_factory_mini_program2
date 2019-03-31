@@ -1,0 +1,52 @@
+/* pages/payResult/payResult.wxss */
+.pay-result {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  padding-top: 200rpx;
+}
+
+ .pay-result .msg {
+  text-align: center;
+  color: #2bab25;
+  font-size: 36rpx;
+}
+
+.pay-result .btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pay-result .btn {
+  text-align: center;
+  height: 80rpx;
+  margin: 0 20rpx;
+  width: 200rpx;
+  line-height: 78rpx;
+  border: 1px solid #868686;
+  color: #000000;
+  border-radius: 5rpx;
+}
+
+.pay-result .error .msg {
+  color: #b4282d;
+  margin-bottom: 60rpx;
+}
+
+.pay-result .error .tips {
+  color: #7f7f7f;
+  margin-bottom: 70rpx;
+}
+
+.pay-result .error .tips .p {
+  font-size: 24rpx;
+  line-height: 42rpx;
+  text-align: center;
+  padding-top: 30rpx;
+}
+
+.pay-result .error .tips .p {
+  line-height: 42rpx;
+  text-align: center;
+} 

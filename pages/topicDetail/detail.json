@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-divider": "/module/iview/dist/divider/index",
+    "i-icon": "/module/iview/dist/icon/index",
+    "i-spin": "/module/iview/dist/spin/index",
+    "wxparser": "plugin://wxparserPlugin/wxparser"
+  }
+}

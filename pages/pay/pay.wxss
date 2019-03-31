@@ -1,0 +1,13 @@
+/* pages/pay/pay.wxss */
+@import '../cart/cart.wxss';
+@import '../ucenter/address/address.wxss';
+
+.list .item .img{
+  width: 35%;
+}
+.address-list{
+  margin-bottom: 10rpx;
+}
+.btn{
+  border-radius:0rpx;
+}

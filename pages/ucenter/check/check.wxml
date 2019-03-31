@@ -1,0 +1,60 @@
+<!--pages/ucenter/check/check.wxml-->
+<view class='container'>
+
+  <view class='banner bg-banner'>
+    <view class='add' bindtap='addCar' wx:if="{{carInfo.length<=0}}">
+      <image src='{{add_img}}'></image>
+      <text>完善我的车辆信息</text>
+    </view>
+
+    <navigator wx:else class='car-info' url='/pages/carList/carList'>
+      <image mode="scaleToFill" src='{{carInfo.pic}}'></image>
+      <text>{{carInfo.name}}{{carInfo.serial}}</text>
+      <text>{{carInfo.no}}</text>
+    </navigator>
+
+    <view class='manual'>
+      <view class='item'>
+        <view class='img'>
+          <image src='{{icon_manual}}'></image>
+        </view>
+        <view class='txt'>保养手册</view>
+        <view class='icon'>
+          <i-icon type="enter" />
+        </view>
+      </view>
+    </view>
+  
+    <view class='check'>
+      <i-tabs current="{{ current }}" bindchange="checkChange">
+        <i-tab key="tab1" title="检测报告"></i-tab>
+        <!-- <i-tab key="tab2" title="保养记录"></i-tab> -->
+      </i-tabs>
+
+      <navigator  class='list' wx:for="{{list}}" wx:key="{{item.id}}" url='/pages/ucenter/checkReport/report?id={{item.id}}&orderid={{item.orderid}}&date={{item.date}}&km={{item.km}}&addr={{item.addr}}' >
+        <view class='left'>
+          <view class='item'>
+            <view class='title'>检测时间</view>
+            <view class='desc'>{{item.date}}</view>
+          </view>
+          <view  class='item'>
+            <view class='title'>检测门店</view>
+            <view class='desc'>{{item.addr}}</view>
+          </view>
+          <view  class='item'>
+            <view class='title'>进店里程</view>
+            <view class='desc'>{{item.km}}</view>
+          </view>
+        </view>
+        <view class='right'>
+          <view class='title'>{{item.care_item}}</view>
+          <view class='desc'>项目需关注</view>
+        </view>
+      </navigator>
+    </view>
+
+  </view>
+
+
+
+</view>

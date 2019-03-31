@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "i-tabs": "/module/iview/dist/tabs/index",
+    "i-tab": "/module/iview/dist/tab/index",
+    "i-toast": "/module/iview/dist/toast/index",
+    "i-message": "/module/iview/dist/message/index",
+    "i-swipeout": "/module/iview/dist/swipeout/index",
+    "i-spin": "/module/iview/dist/spin/index",
+    "i-rate": "/module/iview/dist/rate/index",
+    "i-cell":"/module/iview/dist/cell/index",
+    "i-cell-group": "/module/iview/dist/cell-group/index",
+    "i-icon": "/module/iview/dist/icon/index",
+    "i-load-more": "/module/iview/dist/load-more/index"
+  }
+}

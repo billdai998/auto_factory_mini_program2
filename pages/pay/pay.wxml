@@ -1,0 +1,57 @@
+<view class="container">
+
+  <view class="address-list">
+    <view wx:if="{{ hasAddress}}" class="item" bindtap="selectAddress" >
+      <view class="l">
+        <view class="name">{{address.name}}</view>
+        <view class="default" wx:if="{{address.isdefault}}">默认</view>
+      </view>
+      <view class="c">
+        <view class="mobile">{{address.mobile}}</view>
+        <view class="address">{{address.province_txt + address.city_txt+address.county_txt+address.detail}}</view>
+      </view>
+      <view class="r">
+        <image class="del" src="/static/images/address_right.png"></image>
+      </view>
+    </view>
+    <view wx:else class="item" bindtap="selectAddress">
+      请添加地址信息
+    </view>
+  </view>
+
+  <view class='list'>
+    <view class='item' wx:for="{{list}}" wx:key="{{item.id}}">
+
+      <view class='img row-center'>
+        <image src='{{item.images[0].url}}'></image>
+      </view>
+      <view class='txt'>
+        <view class='name'>{{item.name}}</view>
+        <view class='desc'>{{item.memo}}</view>
+        <view class='price '>
+          <view class='p'>{{item.price_cn}}</view>
+          <view class='nums' data-idx='{{index}}' bindtap='getIndex'>
+            <i-input-number value="{{ item.nums }}" min="1" max="100" bindchange="handleChangeNums" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='nodata' wx:if="{{!hasMoreData}}">
+    <i-load-more tip="暂无数据" loading="{{ false }}" />
+  </view>
+  <view class='floot'>
+    <view class='price'>
+      <text class='txt'>合计：</text>
+      <text class='money'>{{amount_cn}}</text>
+    </view>
+    <button class='btn' bindtap='makeBooking' disabled='{{isLoading}}' loading='{{isLoading}}'>
+      提交订单
+    </button>
+  </view>
+
+
+</view>
+
+<i-message id="message" />

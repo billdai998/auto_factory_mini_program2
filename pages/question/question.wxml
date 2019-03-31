@@ -1,0 +1,37 @@
+<!--pages/question/question.wxml-->
+<view class="container">
+  <view class='content'>
+
+    <view class='user'>
+      <view class='img'>
+        <image src='{{userInfo.avatar_url}}'></image>
+      </view>
+      <view class='banner'>
+        <view class='item'>{{userInfo.name}}</view>
+        <view class='item'>{{idx+1}}/10</view>
+        <view class='item'>{{type==0?'普通':'高级'}}</view>
+      </view>
+    </view>
+
+    <view class='question' wx:if="{{!isEnd}}">
+      <view class="title " animation="{{animationTitleData}}">{{item.title}}</view>
+      <view class="qs-item {{item.checked?'checked':''}} {{item.wrong?'wrong':''}} {{item.right?'right':''}}" animation="{{animationItemData}}" wx:for="{{item.items}}" wx:key="{{item.id}}" data-idx='{{index}}' bindtap='selectItem'>{{item.val}}</view>
+
+    </view>
+
+    <view class='end' wx:if="{{isEnd}}">
+      <view wx:if="{{rightArray.length<7}}" class='question-desc'>
+        很遗憾，您只答对了
+        <text>{{rightArray.length}}</text>题！
+      </view>
+      <view class='question-desc' wx:else>
+        恭喜您，您答对了
+        <text>{{rightArray.length}}</text>题！
+        <view class='question-desc'>您将获得{{prize.desc}},</view>
+        <view class='question-desc'>请在我的优惠里查看！</view>
+      </view>
+    </view>
+
+
+  </view>
+</view>

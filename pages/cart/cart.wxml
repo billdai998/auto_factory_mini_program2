@@ -1,0 +1,59 @@
+<!--pages/cart/car.wxml-->
+<view class="container">
+  <i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+  <view class='no-cart' wx:if="{{list.length<=0}}" bindtap="goHome" >
+    <view class="c">
+      <image src="{{no_car_img}}" />
+      <text>去添加点什么吧</text>
+    </view>
+  </view>
+  <view wx:else>
+    <view class='list'>
+      <view style='position: relative;' wx:for="{{list}}" wx:key="{{item.id}}">
+        <view class='item' data-idx='{{index}}' bindlongpress='showDeleteView'>
+          <view class='check row-center' bindtap='selectItem' data-idx='{{index}}'>
+            <image src='{{item.checked==true?icon_checked:icon_uncheck}}'></image>
+          </view>
+          <navigator class='img row-center' url='../goods/goods?id={{item.mallid}}'>
+            <image src='{{item.img_url}}'></image>
+          </navigator>
+          <view class='txt'>
+            <view class='name'>{{item.name}}</view>
+            <view class='desc'>{{item.memo}}</view>
+            <view class='price '>
+              <view class='p'>{{item.price_cn}}</view>
+              <view class='nums' data-idx='{{index}}' bindtap='getIndex'>
+                <i-input-number value="{{ item.nums }}" min="1" max="100" bindchange="handleChangeNums" />
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='item-del' wx:if="{{item.showDelete}}" data-idx='{{index}}' bindtap='hiddenDeleteView'>
+          <view class='del-btn' data-idx='{{index}}' data-id='{{item.id}}' bindtap='deleteItem'>删除</view>
+        </view>
+      </view>
+    </view>
+
+    <view class='nodata' wx:if="{{!hasMoreData}}">
+      <i-load-more tip="暂无更多数据" loading="{{ false }}" />
+    </view>
+    <view class='floot'>
+      <view class='price'>
+        <text class='txt'>合计：</text>
+        <text class='money'>{{amount_cn}}</text>
+      </view>
+      <button disabled="{{counts==0?true:false}}" class='btn' bindtap='makeBooking'>
+        去结算{{counts==0?'':'('+counts+')'}}
+      </button>
+    </view>
+
+  </view>
+
+
+
+
+
+
+</view>
+<i-message id="message" />

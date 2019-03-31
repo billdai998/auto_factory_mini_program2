@@ -1,0 +1,88 @@
+<!--pages/catagory/catagory.wxml-->
+<view class="container">
+  <i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+  <view class='banner bg-banner'>
+    <view class='add' bindtap='addCar' wx:if="{{carInfo.length<=0}}">
+      <!-- <image src='{{add_img}}'></image> -->
+      <text>完善我的车辆信息</text>
+    </view>
+
+    <navigator wx:else class='banner-car-info' url='/pages/carList/carList'>
+      <view class='logo center-column'>
+
+        <image class='band-pic' mode="scaleToFill" src='{{carInfo.brand_pic}}'></image>
+      </view>
+      <view class='info center-column'>
+        <view class='serial'> {{carInfo.serial}}</view>
+        <view class='serial'>{{carInfo.no}}</view>
+      </view>
+      <view class='add center-column'>
+        <view class='serial'>
+          新增车辆
+          <i-icon type="enter" color='#fff' />
+        </view>
+      </view>
+
+      <!-- <image class='band-pic' mode="scaleToFill" src='{{carInfo.brand_pic}}'></image>
+    <view class='car-info'>
+     <view class='serial'> {{carInfo.serial}}</view> 
+      <view class='serial'>{{carInfo.no}}</view> 
+      <view class='enter'>
+        新增车辆
+        <i-icon type="enter" color='#fff' />
+      </view>
+    </view>
+      -->
+    </navigator>
+
+  </view>
+
+  <view class="catalog">
+    <scroll-view class="nav" scroll-y="true">
+      <view class="item {{ currentCategoryId == item.val ? 'active' : ''}}" wx:for="{{navList}}" wx:key="{{item.id}}" data-id="{{item.val}}" data-index="{{index}}" bindtap="switchCate">{{item.key}}</view>
+    </scroll-view>
+    <scroll-view style='height:75vh' scroll-y="true">
+
+
+      <view class='content'>
+        <view class='item' wx:for="{{contents}}" wx:key="{{item.id}}" wx:for-index="idx">
+          <view class='item-main'>
+            <view class='item-small'>
+              <image src='{{item.logo[0].url}}'></image>
+            </view>
+            <navigator class='item-middel' url='/pages/goods/goods?id={{item.id}}'>
+              <text class='title'>{{item.name}}</text>
+              <text class='desc'>{{item.memo}}</text>
+            </navigator>
+            <view class='item-small-check' data-idx='{{idx}}' data-id="{{idx.id}}" bindtap='selectItem'>
+              <view class='check-price' wx:if="{{item.price>0}}">¥{{item.price}}</view>
+              <view wx:else class='no-car'>请录车牌</view>
+
+              <view>
+                <image class='check_box' src='{{item.checked==true?icon_checked:icon_uncheck}}'></image>
+
+              </view>
+            </view>
+          </view>
+
+
+
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class='floot'>
+    <view class='price'>
+      <text class='txt'>合计：</text>
+      <text class='money'>¥{{amount}}</text>
+    </view>
+    <view class='btn' bindtap='makeBooking'>
+      确 认
+    </view>
+  </view>
+  <i-message id="message" />
+  <i-toast id="toast" />
+
+</view>

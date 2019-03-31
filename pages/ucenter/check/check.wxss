@@ -1,0 +1,120 @@
+/* pages/ucenter/check/check.wxss */
+
+@import '../index/index.wxss';
+
+.check{
+  margin: 20rpx;
+  border-radius: 15rpx;
+
+}
+.manual{
+  width: 100%;
+  height: 90rpx;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30rpx;
+}
+
+.manual .item{
+  width: 96%;
+  height: 90rpx;
+  margin: 20rpx;
+  line-height: 90rpx;
+  background: #fff;
+  border-radius: 15rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+.manual .item .img{
+  width: 50rpx;
+  height: 100%;
+  line-height: 90rpx;
+  text-align: center;
+  vertical-align: middle;
+}
+.manual .item .txt{
+  width: 85%;
+  height: 100%;
+  line-height: 90rpx;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.manual .item .img image{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.check .list{
+  margin-top: 20rpx;
+  width: 100%;
+  height: 200rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+}
+
+.check .list .left{
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+.check .list .left .item{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  /* padding-left: 20rpx; */
+  display: flex;
+  flex-direction: row;
+  font-size: 28rpx;
+
+}
+.check .list .left .item .title{
+  width: 30%;
+  height: 100%;
+  line-height: 60rpx;
+  text-align: center;
+  color: #bbbec4;
+
+}
+.check .list .left .item .desc{
+ width: 70%;
+  height: 100%;
+  line-height: 60rpx;
+  text-align: left;
+  color: #495060;
+
+}
+
+.check .list .right{
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  padding-right: 30rpx;
+}
+
+.check .list .right .title{
+  height: 120rpx;
+  width: 100%;
+  line-height: 160rpx;
+  text-align: right;
+  font-size: 86rpx;
+  color: #495060;
+}
+
+.check .list .right .desc{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: right;
+  font-size: 28rpx;
+  color: #495060;
+}

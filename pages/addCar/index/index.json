@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-divider": "/module/iview/dist/divider/index",
+    "i-drawer": "/module/iview/dist/drawer/index",
+    "i-modal": "/module/iview/dist/modal/index",
+    "i-input": "/module/iview/dist/input/index",
+    "i-button": "/module/iview/dist/button/index",
+    "i-message": "/module/iview/dist/message/index"
+  }
+ 
+}

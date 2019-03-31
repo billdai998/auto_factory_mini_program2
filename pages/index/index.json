@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "i-divider": "/module/iview/dist/divider/index",
+    "i-icon": "/module/iview/dist/icon/index",
+    "i-message": "/module/iview/dist/message/index",
+    "i-spin": "/module/iview/dist/spin/index",
+    "i-modal": "/module/iview/dist/modal/index"
+  }
+ 
+}

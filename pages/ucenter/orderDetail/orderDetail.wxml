@@ -1,0 +1,51 @@
+<!--pages/ucenter/orderDetail/orderDetail.wxml-->
+<view class='container'>
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+  <view class='block info'>
+    <!-- <view class='link'>
+      <view class='link-item'>
+        <input value="{{linkName}}" auto-focus bindblur='getUserName' />
+
+        <input value="{{linkMobile}}" bindblur='getUserMobile' />
+
+      </view>
+
+
+
+    </view> -->
+    <view class='car'>联系人：{{detail.linkman}}</view>
+    <view class='car'>联系电话：{{detail.phone}}</view>
+    <view class='car'>到店车辆：{{detail.carInfo.no}}</view>
+    <view class='car'>{{detail.carInfo.brand_name}} {{detail.carInfo.serial}}</view>
+  </view>
+
+  <view class='block'>
+    <view class='store'>服务门店</view>
+    <view class='car'>重庆市九龙坡区创业大道123号1层</view>
+    <view class='link'>
+      <view class='item left time'>到店时间</view>
+      <view class='item right'>{{detail.book_date}} {{detail.book_time}}</view>
+    </view>
+  </view>
+
+  <view class='block service'>
+    <view class='store'>服务项目</view>
+    <view class='link' wx:for='{{detail.malls}}' wx:key="{{item.id}}">
+      <view class='item left time service-name'>{{item.name}}</view>
+      <view class='item right'>¥{{item.price}} * {{item.nums}}</view>
+    </view>
+    <view class='car'>共{{detail.malls.length}}项服务 小计¥{{amount}}</view>
+  </view>
+
+  <!-- <view class='block amount'></view> -->
+
+  <!-- <view class='btn'>
+    <view class='text'>
+      <text class='count'>合计：</text>
+      <text class='amount'>¥{{amount}}</text>
+    </view>
+    <button class='pay' bindtap='getOrder' disabled='{{btnLoading}}' loading="{{btnLoading}}">{{btnText}}</button>
+  </view> -->
+  <i-message id="message" />
+</view>

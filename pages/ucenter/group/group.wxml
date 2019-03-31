@@ -1,0 +1,82 @@
+<!--pages/ucenter/group/group.wxml-->
+<view class='container'>
+  <i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+  <view class='order'>
+    <i-tabs current="{{ current }}" color="#00a8ec" bindchange="handleChange">
+      <i-tab key="tab1" title="全部"></i-tab>
+      <i-tab key="tab2" title="待成团"></i-tab>
+      <i-tab key="tab3" title="已完成"></i-tab>
+    </i-tabs>
+  </view>
+
+  <view class='list-block'>
+    <view class='list' wx:if="{{list.length>0}}">
+      <view class='item' wx:for="{{list}}" wx:key="{{item.id}}">
+        <view class='head'>
+          <view class='status'>{{item.type_txt}}</view>
+          <view class='status font-color'>{{item.status_txt}}</view>
+        </view>
+
+        <navigator class='content' url='/pages/groupDetail/groupDetail?id={{item.mallid}}&initiator={{member.id}}'>
+
+          <view class='img'>
+            <image src='{{item.imgs[0].url}}'></image>
+          </view>
+          <view class='title'>
+            {{item.name}}
+          </view>
+        </navigator>
+
+        <view class='foot'>
+          <view class='book' wx:if="{{(item.mall_type ==1) && (item.pay_status==1) && (item.status ==1)}}" data-id='{{item.orderid}}' bindtap='changeBooking'>预约服务</view>
+          <view wx:else>
+            <button wx:if="{{item.status ==0}}" class='share-btn' data-id='{{item.mallid}}' data-name='{{item.name}}' data-url='{{item.imgs[0].url}}' data-groupid='{{item.groupid}}' open-type='share'>邀请好友组团</button>
+
+          </view>
+          <view>共{{item.nums}}件商品 金额:
+            <text>{{item.all_amount_cn}}</text>
+          </view>
+
+        </view>
+
+        <view class='foot'>
+          <view>已拼团 {{item.nums}} 人</view>
+          <view class='count-down'>
+            <i-count-down target="{{item.targetTime}}" countdown-class="big"></i-count-down>
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+    <view wx:else class='no-order'>
+      <view class='img'>
+        <image src='/static/images/no_order.png'></image>
+      </view>
+      <!-- <view class='txt'>
+        您还没有相关订单
+      </view> -->
+    </view>
+
+    <view class='nodata' wx:if="{{!hasMoreData}}">
+      <i-load-more tip="暂无数据" loading="{{ false }}" />
+    </view>
+
+    <view class='floot' wx:if="{{hasPay}}">
+      <view class='price'>
+        <text class='txt'>合计：</text>
+        <text class='money'>{{amount_cn}}</text>
+      </view>
+      <button disabled="{{amount==0?true:false}}" loading="{{isLoanding}}" class='btn' bindtap='makeBooking'>
+        {{pay_title}}
+      </button>
+    </view>
+  </view>
+  <i-toast id="toast" />
+  <i-message id="message" />
+
+
+  <i-spin size="large" fix wx:if="{{ spinShow }}">
+  </i-spin>
+</view>

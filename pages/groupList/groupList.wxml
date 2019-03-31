@@ -1,0 +1,29 @@
+<!--pages/groupList/groupList.wxml-->
+<view class="container">
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+  <view class='list'>
+    <navigator class='item' wx:for="{{list}}" wx:key="{{item.id}}" url='../groupDetail/groupDetail?id={{item.id}}'>
+      <view class='img'>
+        <image src='{{item.images[0].url}}'></image>
+      </view>
+      <view class='txt'>
+        <view class='title'>{{item.name}}</view>
+        <view class='desc'>{{item.memo}}</view>
+        <view class='foot'>
+          <view class='price'>
+          <text class='org'>{{item.price}}</text>
+          <text class='group'>{{item.cn_group_price}}</text>
+          
+          </view>
+          <view class='btn'><view class='pin'>我要拼团</view></view>
+        </view>
+      </view>
+    </navigator>
+
+    <view class='nodata' wx:if="{{!hasMoreData}}">
+      <i-load-more tip="暂无更多数据" loading="{{ false }}" />
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,64 @@
+<!--pages/booking/booking.wxml-->
+<view class='container'>
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+  <view class='banner bg-banner'>
+    <view class='add' bindtap='addCar' wx:if="{{carInfo.length<=0}}">
+      <image src='{{add_img}}'></image>
+      <text>完善我的车辆信息</text>
+    </view>
+
+    <navigator wx:else class='car-info' url='/pages/carList/carList'>
+      <image mode="scaleToFill" src='{{carInfo.pic}}'></image>
+      <text>{{carInfo.serial}}</text>
+      <text>{{carInfo.no}}</text>
+      <view class='enter'>
+        新增车辆
+        <i-icon type="enter" color='#fff' />
+      </view>
+    </navigator>
+
+  </view>
+
+  <view class='type'>
+    <view wx:for="{{itemData}}" wx:key="{{item.id}}" class='item' data-type="{{item.val}}" bindtap='getType'>
+      <image src='{{item.icon}}'></image>
+      <text>{{item.key}}</text>
+      <view class='line' wx:if="{{item.val ==type }}"></view>
+    </view>
+  </view>
+
+  <view class='content'>
+    <view class='item' wx:for="{{contents}}" wx:key="{{item.id}}" wx:for-index="idx">
+      <view class='item-main'>
+        <view class='item-small'>
+          <image src='{{item.logo[0].url}}'></image>
+        </view>
+        <navigator class='item-middel' url='/pages/goods/goods?id={{item.id}}'>
+          <text class='title'>{{item.name}}</text>
+          <text class='desc'>{{item.memo}}</text>
+        </navigator>
+        <view class='item-small-check' data-idx='{{idx}}' data-id="{{idx.id}}" bindtap='selectItem'>
+          <view class='check-price' wx:if="{{item.price>0}}">¥{{item.price}}</view>
+          <view wx:else class='no-car'>请确认车型</view>
+          <view>
+          <image class='check_box' src='{{item.checked==true?check_box_checked:check_box}}'></image>
+            
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class='floot'>
+    <view class='price'>
+      <text class='txt'>合计：</text>
+      <text class='money'>¥{{amount}}</text>
+    </view>
+    <view class='btn' bindtap='makeBooking'>
+      确 认
+    </view>
+  </view>
+  <i-message id="message" />
+  <i-toast id="toast" />
+</view>

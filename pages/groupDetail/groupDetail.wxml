@@ -1,0 +1,105 @@
+<view class="container">
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+  <swiper class="goodsimgs" indicator-dots="true" autoplay="true" interval="3000" duration="1000" circular="true">
+    <swiper-item wx:for="{{images}}" wx:key="{{item.id}}">
+      <image src="{{item.url}}" background-size="cover"></image>
+    </swiper-item>
+  </swiper>
+  <view class="goods-info">
+    <view class="c">
+      <text class="name">{{goods.name}}</text>
+      <text class="desc">{{goods.memo}}</text>
+      <!-- <text class="price">{{goods.cn_price}}</text> -->
+      <view class="brand" wx:if="{{brand.name}}">
+        <navigator url="">
+          <text>{{brand.name}}</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class='price'>
+    <view class='nums'>{{goods.min_membs}}人团</view>
+    <view class='ppp'>
+      <view class='p'>{{goods.cn_group_price}}</view>
+      <view class='p org-price'>{{goods.cn_price}}</view>
+    </view>
+    <view class='time'>
+      <view class='t'>离拼团结束还剩：</view>
+      <view class='down'>
+        <text>{{countDown.day}}天</text>
+        <text>{{countDown.hours}}时</text>
+        <text>{{countDown.minutes}}分</text>
+        <text>{{countDown.seconds}}秒</text>
+        <!-- <i-count-down target="{{targetTime}}" show-day="{{true}}" clear-timer="{{clearTimer}}" format="{{myFormat}}"  countdown-class="big"></i-count-down> -->
+      </view>
+    </view>
+  </view>
+  <view class="section-nav section-attr">
+    <view class="t">请选择数量</view>
+    <view class="t">
+      <i-input-number value="{{ nums }}" min="1" max="{{goods.group_nums}}" bindchange="handleChangeNums" />
+    </view>
+  </view>
+
+  <view class='initiator' wx:if="{{initiator>0}}">
+    <view class='img'>
+    <image src='{{initiatorMember.avatar_url}}'></image>
+    {{initiatorMember.name}}</view>
+    <view class='desc'>还差<text>{{diffMan}}人</text>拼成</view>
+    <view class='btn' bindtap='goPingDan'>去拼单</view>
+  </view>
+
+  <view class="section-nav section-attr">
+    <view class="t">地址</view>
+    <view class="t" bindtap="selectAddress" wx:if="{{hasAddress}}">
+      {{address}}
+    </view>
+    <view class='t' wx:else bindtap="selectAddress">
+      请添加地址信息
+    </view>
+  </view>
+
+
+
+
+  <view class="goods-attr">
+    <view class="t">商品参数</view>
+    <view class="l">
+      <!-- <view class="item" wx:for="{{attribute}}" wx:key="{{item.name}}">
+        <text class="left">{{item.name}}</text>
+        <text class="right">{{item.value}}</text>
+      </view> -->
+    </view>
+  </view>
+
+  <view class="detail">
+    <wxparser rich-text="{{goods.content}}" />
+  </view>
+
+
+
+
+
+</view>
+
+<view class="bottom-btn">
+  <view class="c" bindtap='buyNow'>立即购买{{goods.cn_price}}</view>
+  <view class="r" bindtap="addToGroup">我要拼团{{goods.cn_group_price}}</view>
+</view>
+
+<!-- 浮动按钮，返回首页与分享，记得在相关页面添加icon与写分享方法  -->
+<view class='float-btn'>
+  <navigator class='float-home' open-type="switchTab" url="/pages/index/index">
+    <i-icon type="homepage_fill" size="22" color="#fff" />
+  </navigator>
+  <view class='float-share'>
+    <button class='share-btn' open-type="share"></button>
+    <view class='float-icon'>
+      <i-icon type="share_fill" size="18" color="#fff" />
+    </view>
+  </view>
+</view>
+
+<i-toast id="toast" />
+<i-message id="message" />

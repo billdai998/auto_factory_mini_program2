@@ -1,0 +1,89 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/cart/cart",
+    "pages/topic/topic",
+    "pages/ucenter/index/index",
+    "pages/topicDetail/detail",
+    "pages/addCar/index/index",
+    "pages/ucenter/order/order",
+    "pages/ucenter/score/score",
+    "pages/ucenter/subscribe/subscribe",
+    "pages/booking/booking",
+    "pages/bookTime/time",
+    "pages/bookDetail/bookDetail",
+    "pages/carList/carList",
+    "pages/catagory/catagory",
+    "pages/ucenter/check/check",
+    "pages/ucenter/checkReport/report",
+    "pages/question/question",
+    "pages/goods/goods",
+    "pages/ucenter/address/address",
+    "pages/ucenter/contact/contact",
+    "pages/goodList/goodList",
+    "pages/ucenter/addressAdd/addressAdd",
+    "pages/ucenter/group/group",
+    "pages/payResult/payResult",
+    "pages/groupList/groupList",
+    "pages/groupDetail/groupDetail",
+    "pages/ucenter/comment/comment",
+    "pages/ucenter/rate/index",
+    "pages/questionSelect/questionSelect"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00a8ec",
+    "navigationBarTitleText": "超级工厂 Ultimate Factory",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 10
+  },
+  "tabBar": {
+    "backgroundColor": "#fafafa",
+    "borderStyle": "white",
+    "selectedColor": "#00a8ec",
+    "color": "#bfbfbf",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/images/tab_home.png",
+        "selectedIconPath": "static/images/tab_home_sd.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/catagory/catagory",
+        "iconPath": "static/images/tab_catagory.png",
+        "selectedIconPath": "static/images/tab_catagory_sd.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/topic/topic",
+        "iconPath": "static/images/logo.png",
+        "selectedIconPath": "static/images/logo2.png",
+        "text": "超级"
+      },
+      {
+        "pagePath": "pages/goodList/goodList",
+        "iconPath": "static/images/goods.png",
+        "selectedIconPath": "static/images/goods_sd.png",
+        "text": "市场"
+      },
+      {
+        "pagePath": "pages/ucenter/index/index",
+        "iconPath": "static/images/tab_my.png",
+        "selectedIconPath": "static/images/tab_my_sd.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "plugins": {
+    "wxparserPlugin": {
+      "version": "0.2.1",
+      "provider": "wx9d4d4ffa781ff3ac"
+    }
+  }
+}

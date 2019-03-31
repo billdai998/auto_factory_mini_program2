@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "i-tabs": "/module/iview/dist/tabs/index",
+    "i-tab": "/module/iview/dist/tab/index",
+    "i-toast": "/module/iview/dist/toast/index",
+    "i-message": "/module/iview/dist/message/index",
+    "i-swipeout": "/module/iview/dist/swipeout/index",
+    "i-load-more": "/module/iview/dist/load-more/index",
+    "i-count-down": "/module/iview/dist/count-down/index",
+    "i-spin": "/module/iview/dist/spin/index"
+  }
+}

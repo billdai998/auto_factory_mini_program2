@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "i-load-more": "/module/iview/dist/load-more/index",
+    "i-spin": "/module/iview/dist/spin/index",
+    "i-message": "/module/iview/dist/message/index",
+    "i-cell": "/module/iview/dist/cell/index",
+    "i-swipeout": "/module/iview/dist/swipeout/index",
+    "i-input-number": "/module/iview/dist/input-number/index"
+  }
+}

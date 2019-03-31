@@ -1,0 +1,44 @@
+<!--pages/carList/carList.wxml-->
+<view class='container'>
+
+  <view class='add'>
+    <!-- <i-button bind:click="addCar" type="warning" shape="circle" size="small">添加爱车信息</i-button> -->
+    <view class='car' bindtap='addCar'>添加爱车信息</view>
+  </view>
+  <view class='content'>
+    <view class='list' wx:for="{{list}}" wx:key="{{item.id}}" data-idx='{{index}}' bindtap='selectCar' bindlongpress='delCar'>
+      <view class='icon'>
+        <image src='{{item.pic}}'></image>
+      </view>
+      <view class='txt'>
+        <text>{{item.name}}</text>
+        <text>{{item.serial}}</text>
+        <text>{{item.no}}</text>
+      </view>
+      <view class='box'>
+        <block wx:if="{{item.isdefault==1}}">
+          <image src='{{select_icon_checked}}'></image>
+        </block>
+        <block wx:else>
+          <image src='{{select_icon}}'></image>
+        </block>
+      </view>
+    </view>
+
+    <i-modal title="删除提示" visible="{{ showDelDialog }}" bind:ok="handleDelCar" bind:cancel="handleDelCarCancel">
+      <view>{{delMsg}}</view>
+    </i-modal>
+
+  </view>
+
+<!-- <i-button bind:click="setDefaultCar" type="warning" shape="circle" size="small">设为默认车辆</i-button> -->
+
+<!-- <view class='car' bindtap='setDefaultCar'>设为默认车辆</view>
+ <view class='add'>
+ 
+    <view class='car' bindtap='setDefaultCar'>设为默认车辆</view>
+  </view> -->
+
+</view>
+
+<i-message id="message" />

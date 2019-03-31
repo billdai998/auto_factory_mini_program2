@@ -1,0 +1,91 @@
+<!--pages/ucenter/order/order.wxml-->
+<view class='container'>
+  <i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+  <view class='order'>
+    <i-tabs current="{{ current }}" color="#00a8ec" bindchange="handleChange">
+      <i-tab key="tab1" title="全部"></i-tab>
+      <i-tab key="tab2" title="待付款"></i-tab>
+      <i-tab key="tab5" title="待服务"></i-tab>
+      <i-tab key="tab3" title="施工中"></i-tab>
+      <i-tab key="tab4" title="已完成"></i-tab>
+    </i-tabs>
+  </view>
+
+  <view class='list-block'>
+    <view class='list' wx:if="{{list.length>0}}">
+      <view  class='item' wx:for="{{list}}" wx:key="{{item.id}}"  >
+        <view class='head'>
+          <view class='status'>{{item.type_txt}} {{item.isgroup==1?'| 拼团':''}}</view>
+          <view class='status font-color'>{{item.pay_status_txt}} | {{item.status_txt}}</view>
+        </view>
+        <view   class='content imgs' wx:if="{{item.all_nums>1}}">
+          <view class='check-box' wx:if="{{(item.status==0) && (status=='0')}}">
+            <image src="{{item.checked==true?icon_checked:icon_uncheck}}"></image>
+          </view>
+          <navigator  class='more-img' wx:for="{{item.img_url}}" wx:key="{{img}}" wx:for-item="imgItem" url='../orderDetail/orderDetail?id={{item.id}}'>
+            <image src='{{imgItem}}'></image>
+          </navigator>
+        </view>
+        <view class='content' wx:else>
+          <view class='check-box' wx:if="{{(item.status==0) && (status=='0')}}">
+            <image src="{{item.checked==true?icon_checked:icon_uncheck}}"></image>
+          </view>
+          <navigator  class='img' url='../orderDetail/orderDetail?id={{item.id}}'>
+            <image src='{{item.img_url[0]}}'></image>
+          </navigator>
+          <navigator class='title' url='../orderDetail/orderDetail?id={{item.id}}'>
+            {{item.malls[0].name}}
+          </navigator>
+        </view>
+
+        <view class='order-no'>
+          <text>{{item.order_no}}</text>
+          <text>{{item.add_time}}</text>
+        </view>
+
+        <view class='order-no' wx:if="{{item.mall_type ==1}}">
+        <text>预约时间：{{item.book_date==null?'':item.book_date}} {{item.book_time==null?'':item.book_time}}</text>
+        <text>{{item.carno}}</text>
+        </view>
+
+        <view class='foot'>
+          <view class='book' wx:if="{{item.isChgBook}}"   data-id='{{item.id}}' bindtap='changeBooking'>变更预约 </view>
+          <view class='book' wx:if="{{item.isComment}}"  data-id='{{item.id}}' data-mallid='{{item.mallid}}' bindtap='commentData'>服务评价</view>
+          <view wx:else></view>
+          <view class='all'>共{{item.all_nums}}件商品 金额:
+            <text>{{item.all_amount_cn}}</text>
+          </view>
+
+        </view>
+
+      </view>
+    </view>
+
+    <view wx:else class='no-order'>
+      <view class='img'>
+        <image src='/static/images/no_order.png'></image>
+      </view>
+      <!-- <view class='txt'>
+        您还没有相关订单
+      </view> -->
+    </view>
+
+    <view class='nodata' wx:if="{{!hasMoreData}}">
+      <i-load-more tip="暂无数据" loading="{{ false }}" />
+    </view>
+
+    <view class='floot' wx:if="{{hasPay}}">
+      <view class='price'>
+        <text class='txt'>合计：</text>
+        <text class='money'>{{amount_cn}}</text>
+      </view>
+      <button disabled="{{amount==0?true:false}}" loading="{{isLoanding}}" class='btn' bindtap='makeBooking'>
+        {{pay_title}}
+      </button>
+    </view>
+  </view>
+
+  <i-toast id="toast" />
+  <i-message id="message" />
+</view>

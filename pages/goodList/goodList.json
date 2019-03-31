@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "i-spin": "/module/iview/dist/spin/index",
+    "i-load-more": "/module/iview/dist/load-more/index"
+  }
+}

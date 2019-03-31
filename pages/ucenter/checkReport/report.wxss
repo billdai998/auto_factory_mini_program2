@@ -1,0 +1,265 @@
+/* pages/ucenter/checkReport/report.wxss */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  min-height: 380rpx;
+}
+
+.info {
+  background: #fff;
+  width: 100%;
+  min-height: 400rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.info .car {
+  width: 100%;
+  height: 180rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #e9eaec;
+}
+
+.info .car .result {
+  width: 100%;
+  font-size: 42rpx;
+  color: #89e90f;
+}
+
+.info .check {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 70rpx;
+  font-size: 28rpx;
+}
+
+.info .check .item {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  line-height: 70rpx;
+  justify-content: space-around;
+}
+
+.info .check .item2 {
+  width: 100%;
+}
+
+.info .check .item .title {
+  color: #bbbec4;
+  text-align: center;
+}
+
+.info .check .item .title2 {
+  width: 30%;
+  padding-left: 10rpx;
+}
+
+.info .check .item .desc {
+  width: 50%;
+}
+
+.info .check .item .desc2 {
+  width: 100%;
+}
+
+.list {
+  background: #fff;
+  width: 100%;
+  min-height: 110rpx;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20rpx;
+}
+
+.list .head {
+  display: flex;
+  flex-direction: row;
+  line-height: 90rpx;
+  border-bottom: 1rpx solid #e9eaec;
+}
+
+.list .head .title {
+  height: 100%;
+  /* padding-left: 50rpx; */
+  font-size: 33rpx;
+  font-weight: bold;
+  text-align: center;
+}
+
+.list .head   .id {
+  width: 20%;
+}
+
+.list .head  .txt {
+  width: 50%;
+  text-align: left;
+}
+
+.list .head  .isok {
+  width: 30%;
+}
+
+.list .head  .status {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.list .head  .status text {
+  font-size: 33rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.list .head  .status image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.list .desc {
+  width: 100%;
+  min-height: 110rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.list .desc .memo {
+  font-size: 28rpx;
+  color: #bbbec4;
+  padding: 30rpx;
+  border-top: 1rpx solid #e9eaec;
+}
+
+.list .desc .item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 70rpx;
+}
+
+.list .desc .item .name {
+  width: 40%;
+  height: 100%;
+  line-height: 70rpx;
+  padding-left: 50rpx;
+}
+
+.list .desc .item .ssub {
+  width: 60%;
+  height: 100%;
+  line-height: 70rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+}
+
+.video .video-item {
+  width: 100%;
+  height: 530rpx;
+}
+
+.video .video-item video {
+  width: 100%;
+  height: 500rpx;
+}
+
+.list .item {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #e9eaec;
+}
+
+.list .item .id {
+  width: 20%;
+  text-align: center;
+}
+
+.list .item .name {
+  width: 50%;
+  text-align: left;
+}
+
+.list .item .isok {
+  width: 30%;
+  text-align: center;
+}
+
+.check-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  justify-items: center;
+  min-height: 180rpx;
+}
+
+.item-view {
+  width: 33%;
+  min-height: 180rpx;
+  margin-left: 20rpx;
+}
+
+.item-image {
+  text-align: center;
+  width: 260rpx;
+  height: 380rpx;
+}
+
+.showImg {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.innerClose{
+  /* position: absolute; */
+  top: 10;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.innerImg {
+  /* position: absolute; */
+  bottom: 100;
+  width: 100%;
+}
+
+
+.closeImg{
+  width: 60rpx;
+  height: 60rpx;
+  text-align: right;
+}

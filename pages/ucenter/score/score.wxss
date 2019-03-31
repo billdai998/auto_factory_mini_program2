@@ -1,0 +1,40 @@
+/* pages/ucenter/score/score.wxss */
+.score{
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.score-item{
+  width: 100%;
+  
+
+}
+
+.score-item .item-cell{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-bottom: solid 1rpx #dddee1;
+
+  text-align: center;
+}
+
+ 
+
+.cell-id{
+  width: 15%;
+}
+.cell-base{
+  width: 25%;
+}
+.cell-date{
+  width: 35%;
+  font-size: 26rpx;
+}

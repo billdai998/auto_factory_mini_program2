@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-tabs": "/module/iview/dist/tabs/index",
+    "i-tab": "/module/iview/dist/tab/index",
+    "i-modal": "/module/iview/dist/modal/index",
+    "i-icon": "/module/iview/dist/icon/index"
+  }
+}

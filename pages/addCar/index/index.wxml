@@ -1,0 +1,70 @@
+<!--pages/addCar/index/index.wxml-->
+<view class="container">
+
+  <view class='list'>
+
+    <i-divider content="热门汽车"></i-divider>
+    <view class='hot'>
+
+      <view class='hot-item' wx:for="{{hot}}" wx:key="this" bindtap="showSerialList" data-id="{{item.id}}" data-name='{{item.name}}' data-pic='{{item.pic}}'>
+        <image src='{{item.pic}}'></image>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+    <view class='list-item' wx:for="{{carList}}" wx:key="this" wx:for-item="group">
+
+
+      <view wx:if="{{group.name !=''}}">
+        <i-divider content="{{group.name}}"></i-divider>
+      </view>
+
+      <view class="sublist" wx:if="{{group.brandInfo!=''}}">
+        <view bindtap="showSerialList" class="item" data-id="{{item.id}}" data-name='{{item.name}}' wx:for="{{group.brandInfo}}" wx:key="id" data-pic='{{item.pic}}'>
+          <image class="logo " mode="aspectFill" src="{{item.pic}}"></image>
+          <text class="name">{{item.name}}</text>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+
+  <i-drawer mode="right" visible="{{showRight}}" bind:close="toggleRight">
+    <scroll-view class="car-container" scroll-y="true">
+      <view class='serial' wx:for="{{serialList}}" wx:key="this" wx:for-item="serial">
+        <i-divider content="{{serial.menuName}}"></i-divider>
+        <view class='serial-item' wx:for="{{serial.serialList}}" wx:key="this" wx:for-item="subSerial" bindtap='selectSerialCar' data-item="{{subSerial}}" data-name='{{subSerial.serialName}}'>
+          <image mode="aspectFill" src='{{subSerial.serialPic}}'></image>
+          <text>{{subSerial.serialName}}</text>
+        </view>
+      </view>
+
+    </scroll-view>
+  </i-drawer>
+
+  <view class='view-bind' wx:if="{{ showModal }}">
+    <view class='divider'>
+      <i-divider content="车牌信息"></i-divider>
+    </view>
+
+
+    <view class='bind'>
+      <view class='bind-num' bindtap='getJian' wx:for="{{numbers}}" wx:key="this" data-jian="{{item}}">{{item}}</view>
+    </view>
+
+    <view class='bind-input'>
+      <view class='jian'>{{jian}}</view>
+      <input bindinput="getCarNo" value='{{car_no}}' placeholder="请输入车牌号码" />
+
+    </view>
+    <view class='bind-btn'>
+      <i-button bind:click="finishClick" type="warning" shape="circle">完成</i-button>
+
+    </view>
+  </view>
+
+<i-message id="message" />
+
+
+
+</view>

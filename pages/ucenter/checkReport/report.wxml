@@ -1,0 +1,81 @@
+<!--pages/ucenter/checkReport/report.wxml-->
+<view class='container'>
+  <view class='info'>
+    <view class='car'>
+      <view class='result'>{{result}}</view>
+      <view class='txt'>{{carInfo.serial}}</view>
+      <view class='txt'>{{carInfo.no}}</view>
+    </view>
+
+    <view class='check'>
+      <view class='item'>
+        <view class='title'>检测时间</view>
+        <view class='desc'>{{check.date}}</view>
+      </view>
+      <view class='item'>
+        <view class='title'>进店里程(KM)</view>
+        <view class='desc'>{{check.km}}</view>
+      </view>
+      <view class='item item2'>
+        <view class='title title2'>检测门店</view>
+        <view class='desc2'>{{check.addr}}</view>
+      </view>
+    </view>
+  </view>
+
+  <i-tabs current="{{ current }}" bindchange="checkChange">
+    <i-tab key="tab1" title="详细报告"></i-tab>
+    <i-tab key="tab2" title="视频信息"></i-tab>
+
+  </i-tabs>
+
+
+  <view wx:if="{{current=='tab1'}}" class='list' wx:for="{{checkResult}}" wx:key="{{item.id}}">
+    <view class='head'>
+      <view class='title id'>{{item.id}}</view>
+      <view class='title txt'>{{item.checkName}}</view>
+      <view class='title isok'>是否良好</view>
+    </view>
+    <view class='item' wx:for="{{item.checkList}}" wx:key="this" wx:for-item="sub" data-flag='{{sub.checkFlag}}' data-txt='{{sub.checkTxt}}' bindtap='showCheckTxt'>
+      <view class='id'>{{sub.id}}</view>
+      <view class='name'>{{sub.checkItemName}}</view>
+      <view class='isok'>
+        <i-icon type="{{sub.checkFlag == '0'?'right':'close'}}" color='{{sub.checkFlag == "0"?"#1AAC19":"#ed3f14"}}' /> </view>
+      <!-- <view class='ssub'>
+        <view class='sitem' wx:for="{{sub.suggestionOptionList}}" wx:key="{{ssub.id}}" wx:for-item="ssub">
+          <i-icon type="{{ssub.checkedFlag == true?'right':'close'}}" color='{{ssub.checkedFlag == true?"#1AAC19":"#ed3f14"}}' /> {{ssub.suggestionOption}}
+        </view>
+
+      </view> -->
+    </view>
+
+
+
+  </view>
+  <view wx:if="{{current=='tab1'}}" class='check-img'>
+    <view class='item-view' wx:for="{{checkImgs}}" wx:key="{{item.id}}" bindtap='showImgFunc' data-url='{{item.url}}'>
+      <image src='{{item.url}}' class='item-image'></image>
+    </view>
+  </view>
+
+  <view wx:if="{{showImg}}" class='showImg'>
+    <view class='innerClose' bindtap='closeImg'>
+      <image src='{{closeImg}}' class='closeImg'></image>
+    </view>
+    <view class='innerImg'>
+      <image src='{{showImgUrl}}'></image>
+    </view>
+  </view>
+
+
+  <view wx:if="{{current=='tab2'}}" class='video'>
+    <view class='video-item' wx:for="{{videoList}}" wx:key="{{item.id}}">
+      <video id="video{{item.id}}" src="{{item.url}}" enable-danmu danmu-btn controls show-play-btn="false" bindplay="videoPlay" data-id='video{{item.id}}'></video>
+    </view>
+  </view>
+
+</view>
+
+<i-modal title="关注项目说明" visible="{{ showCheckText }}" bind:ok="handleClose" show-cancel="{{false}}">
+  <view>{{checkText}}</view>
+</i-modal>

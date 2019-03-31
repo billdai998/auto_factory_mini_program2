@@ -1,0 +1,109 @@
+/* pages/groupList/groupList.wxss */
+
+.nodata {
+  width: 100%;
+  height: 120rpx;
+}
+
+.list {
+  width: 100%;
+  min-height: 330rpx;
+  background-color: #00a8ec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+.list .item {
+  width: 96%;
+  height: 280rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.list .item .img {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.list .item .img image {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 12rpx;
+}
+
+.list .item .txt {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.list .item .txt .title {
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 33rpx;
+  font-weight: bold;
+}
+
+.list .item .txt .desc {
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list .item .txt .foot .price{
+   font-size: 33rpx;
+  font-weight: bold;
+  color: #ff0000;
+  width: 50%;
+}
+.list .item .txt .foot .price .org{
+text-decoration:line-through;
+font-size: 22rpx;
+}
+.list .item .txt .foot .price .group{
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #ff0000;
+}
+.list .item .txt .foot{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.list .item .txt .foot .btn{
+  width: 50%;
+  text-align: center;
+  
+}
+.list .item .txt .foot .btn .pin{
+color: #fff;
+  font-size: 28rpx;
+  /* font-weight: bold; */
+  width: 160rpx;
+  height: 100%;
+  background-color: #ff0000;
+  border-radius: 30rpx;
+}

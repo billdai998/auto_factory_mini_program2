@@ -1,0 +1,33 @@
+<!--pages/topicDetail/detail.wxml-->
+<view class='container'>
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+  <view class='title-view'>
+    <text class='title'>{{content.title}}</text>
+    <text class='time'>{{content.add_time}}</text>
+
+
+  </view>
+  <!-- <rich-text nodes="{{content.content}}" type="text"></rich-text> -->
+  <view class='title-content'>
+    <wxparser rich-text="{{content.content}}" />
+  </view>
+
+  <view style='padding-bottom:80rpx;text-align:center;padding-top: 80rpx;'>
+    <button class='share-btn' open-type="share">分享阅读</button>
+  </view>
+
+  <!-- 浮动按钮，返回首页与分享，记得在相关页面添加icon与写分享方法  -->
+  <view class='float-btn'>
+    <navigator class='float-home' open-type="switchTab" url="/pages/index/index">
+      <i-icon type="homepage_fill" size="22" color="#fff" />
+    </navigator>
+    <view class='float-share'>
+      <button class='share-btn' open-type="share"></button>
+      <view class='float-icon'>
+        <i-icon type="share_fill" size="18" color="#fff" />
+      </view>
+    </view>
+  </view>
+
+</view>
